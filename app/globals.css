@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), sans-serif;
+  --font-script: var(--font-script-face), cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+
+  --color-canvas: #070707;
+  --color-ink: #f7f4ef;
+  --color-mist: #ffffffb8;
+  --color-muted: #ffffff94;
+  --color-faint: #ffffff1f;
+  --color-rule: #343434;
+  --color-paper: #f4f3ee;
+  --color-sumi: #141414;
+  --color-stone: #585854;
+  --color-sun: #f0c068;
+  --color-coral: #e08070;
+}
+
+html {
+  background: #070707;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  background: #070707;
+  color: #f7f4ef;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: #fff;
+  color: #080808;
+}
+
+.bg-paper ::selection {
+  background: #141414;
+  color: #f4f3ee;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    padding-inline: 32px;
+  }
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.display {
+  font-weight: 100;
+  letter-spacing: -0.05em;
+  line-height: 0.86;
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 9.2vw, 8.25rem);
+}
+
+.section-title {
+  font-weight: 200;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+}
+
+.section-title strong {
+  font-weight: 500;
+}
+
+.action {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #ffffff59;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+
+.action:hover {
+  text-decoration-color: currentColor;
+}
+
+.paper-action {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #14141459;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+
+.paper-action:hover {
+  text-decoration-color: currentColor;
+}
+
+.field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #343434;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.9rem 0;
+  color: #f7f4ef;
+  font: inherit;
+  font-weight: 300;
+  outline: none;
+}
+
+.field:focus {
+  border-bottom-color: #f7f4ef;
+}
+
+.field::placeholder {
+  color: #ffffff73;
+}
+
+textarea.field {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+select.field {
+  appearance: none;
+}
+
+.inquiry {
+  color-scheme: dark;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
+
+:focus-visible {
+  outline: 1px solid #eee;
+  outline-offset: 4px;
+}
