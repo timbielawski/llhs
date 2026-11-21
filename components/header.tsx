@@ -40,7 +40,7 @@ function HeaderNav({ pathname }: { pathname: string }) {
       <div className="shell flex h-20 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3" aria-label="Little Lions Head Studios, home">
           <Mark className="h-10 w-auto" />
-          <span className="hidden leading-none sm:block">
+          <span className="leading-none">
             <span className="block font-display text-[13px] font-medium tracking-[-0.03em] text-ink">
               Little Lions Head
             </span>
